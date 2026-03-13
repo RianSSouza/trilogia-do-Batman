@@ -1,0 +1,51 @@
+@use './variaveis';
+
+.footer{
+    background-color: variaveis.$corFundoPainel;
+    padding: 3em 5.6vw;
+
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 2em;
+    }
+
+    &__informacao{
+        max-width: 500px;
+
+        .text{
+            opacity: 0.8;
+        }
+    }
+
+    &__nav{
+        &__item{
+            margin-bottom: 0.5em;
+        }
+
+        a{
+            filter: brightness(1.5); 
+        }
+    }
+
+    &__copy{
+        text-align: center;
+        margin-top: 2em;
+        font-size: 0.9em;
+        opacity: 0.7;
+    }
+
+    @media (max-width: 760px){
+        &__container{
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+
+        &__informacao{
+            max-width: none;
+        }
+    }
+}

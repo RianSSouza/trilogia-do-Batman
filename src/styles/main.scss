@@ -1,0 +1,103 @@
+@use './variaveis';
+@use './hero';
+@use './trilogia';
+@use './avaliacao';
+@use './footer';
+
+@mixin title($fontSize: 40px){
+    font-family: "Cinzel", serif;
+    font-size: $fontSize;
+    text-transform: uppercase;
+    color: variaveis.$corTituloPrincipal;
+}
+
+@mixin text($fontSize: 16px){
+    font-size: $fontSize;
+    line-height: $fontSize  + 10;
+    color: variaveis.$corTexto;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body{
+    background-color: variaveis.$corDeFundo;
+}
+
+ul{
+    list-style: none;
+}
+
+.title{
+    @include title;
+
+    @media (max-width: 768px){
+        @include title(24px);
+    }
+}
+
+.title--big{
+    @include title(44px);
+
+    @media (max-width: 768px){
+        @include title(26px);
+    }
+}
+
+.title--small{
+    @include title(28px);
+    font-weight: 100;
+    
+ @media (max-width: 768px){
+        @include title(22px);
+    }
+}
+
+.text{
+    @include text();
+
+    @media (max-width: 768px){
+        @include text(14px);
+    }
+}
+
+.text--intalic{
+    @include text();
+    font-style: italic;
+    font-weight: 200;
+
+    @media (max-width: 768px){
+        @include text(14px);
+    }
+}
+
+.text--big{
+    @include text(18px);
+
+    @media (max-width: 768px){
+        @include text(15px);
+    }
+}
+
+.text--small{
+    @include text(12px);
+
+ @media (max-width: 768px){
+        @include text(11px);
+    }
+}
+
+ a {
+    color: variaveis.$corTituloSecundario;
+    text-decoration: none;
+    transition: color 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        color: #fff;
+    }
+}

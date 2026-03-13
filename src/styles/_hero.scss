@@ -1,0 +1,63 @@
+@use './variaveis';
+
+.hero{
+    padding: 12.5em 1.25em;
+    min-height: 60vh;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.4)
+    ),
+    url('../images/fundo_hero.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+
+    @media (min-width: 1700px){
+       background-position: 70% 30%;
+    }
+
+    @media (max-width: 768px) {
+        background-image: linear-gradient(
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.4)
+    ),url('../images/fundo_hero_celular.jpg');
+        background-position: 20%;
+        padding: 7.5em 1em;
+    }
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__theme{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 36px;
+            text-align: center;
+            font-weight: bold;
+
+            @media (max-width: 768px){
+                margin-bottom: 24px;
+
+                .title{
+                    font-size: 22px;
+                }
+
+            }
+        }
+
+        &__films{
+            text-align: center;
+            font-size: 22px;
+
+            &__item{
+                margin: 4px 0;
+                
+            }
+        }
+    }
+
+}
+

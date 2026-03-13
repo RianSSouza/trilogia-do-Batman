@@ -1,0 +1,74 @@
+@use './variaveis';
+
+.trilogia{
+    padding: 13vw 5.6vw;
+
+    &__container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+
+    &__filme{
+            display: flex;
+            margin: 5em;
+            background-color: variaveis.$corFundoPainel;
+            padding: 10px;
+            border-radius: 10px;
+            align-items: center;
+
+            &--reverse{
+                flex-direction: row-reverse;
+            }
+        }
+
+        @media (max-width: 768px) {
+            &__filme{
+                flex-direction: column;
+                text-align: center;
+                
+            }
+
+            .filme__capa img{
+                width: 200px;
+                height: auto;
+            }
+        }
+
+}
+
+.filme__conteudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    padding: 1.5em;
+    gap: 80px;
+
+
+    .button{
+        color: #fff;
+        background-color: variaveis.$corDeFundoBotao;
+        padding: 1em;
+        width: 15em;
+        text-align: center;
+        border-radius: 50px;
+        
+    }
+
+    .filme__capa{
+            img{
+                width: 300px;
+                height: 443px;
+                box-shadow: 10px 5px 5px black;
+            }
+        }
+
+        @media (max-width: 768px){
+            padding: 4px auto;
+        }
+}
+
+
